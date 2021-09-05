@@ -42,6 +42,9 @@ def _get_pandas_df(data_to_process):
 
 
 def _fill_missing_date_rows(ecb_df):
+    """
+    generate rows that are missing due to holidays or weekends
+    """
     processed_df = ecb_df.groupby('CURRENCY').resample('D').ffill().reset_index('CURRENCY', drop=True)
     return processed_df
 
