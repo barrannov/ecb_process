@@ -50,6 +50,10 @@ def _fill_missing_date_rows(ecb_df):
 
 
 def _calculate_missing_exchange_rates(grouped_df, from_currencies, to_currencies):
+    """
+    calculate any to any currency exchange rates
+    """
+
     calculated_rates_df = pd.DataFrame()
 
     for from_currency in from_currencies:
